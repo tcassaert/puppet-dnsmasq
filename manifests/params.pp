@@ -15,11 +15,10 @@ class dnsmasq::params {
       $config_dir = '/etc/dnsmasq.d/'
     }
     default: {
-      case $::operatingsystem {
-        default: {
-          fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
-        }
-      }
+      $package_name = 'dnsmasq'
+      $service_name = 'dnsmasq'
+      $config_file = '/etc/dnsmasq.conf'
+      $config_dir = '/etc/dnsmasq.d/'
     }
   }
 }
